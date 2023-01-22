@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import styles from './Section.module.css';
 
 const Section = ({ children, title }) => {

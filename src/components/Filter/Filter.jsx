@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
+
+import LabelInput from 'shared/LabelInput/LabelInput';
+import styles from './Filter.module.css';
 
 export const Filter = ({ handleChange }) => {
-  const labelFilterId = nanoid();
   return (
-    <label htmlFor={labelFilterId}>
-      Find contacts by name
-      <input
-        id={labelFilterId}
+    <div className={styles.ContactForm}>
+      <LabelInput
+        caption="Find contacts by name"
         type="text"
         name="filter"
         onChange={handleChange}
       />
-    </label>
+    </div>
   );
 };
 
