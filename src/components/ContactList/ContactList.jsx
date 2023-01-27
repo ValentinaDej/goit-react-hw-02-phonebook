@@ -6,12 +6,12 @@ import ContactItem from 'components/ContactItem/ContactItem';
 const ContactList = ({ onDeleteClick, contacts }) => {
   return (
     <ul className={styles.list}>
-      {contacts.map(({ id, nameContact, number }) => {
+      {contacts.map(({ id, name, number }) => {
         return (
           <ContactItem
             key={id}
             id={id}
-            nameContact={nameContact}
+            name={name}
             number={number}
             onDeleteClick={onDeleteClick}
           />
@@ -28,7 +28,7 @@ ContactList.prototypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      nameContact: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,

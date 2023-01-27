@@ -4,10 +4,10 @@ import Button from 'shared/Button/Button';
 
 import styles from './ContactItem.module.css';
 
-const ContactItem = ({ id, nameContact, number, onDeleteClick }) => {
+const ContactItem = ({ id, name, number, onDeleteClick }) => {
   return (
     <li className={styles.listItem}>
-      {nameContact}: {number}
+      {name}: {number}
       <Button
         title="Delete"
         type="button"
@@ -23,7 +23,7 @@ export default ContactItem;
 
 ContactItem.prototypes = {
   id: PropTypes.string.isRequired,
-  nameContact: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
   onDeleteClick: PropTypes.func.isRequired,
 };

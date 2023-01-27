@@ -9,17 +9,17 @@ import Filter from './Filter/Filter';
 export class App extends Component {
   state = {
     contacts: [
-      { id: 'id-1', nameContact: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', nameContact: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', nameContact: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', nameContact: 'Annie Copeland', number: '227-91-26' },
+      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
   };
 
-  addContact = ({ nameContact, number }) => {
-    if (this.checkUniqueData(nameContact)) {
-      alert(`${nameContact} is already in contacts.`);
+  addContact = ({ name, number }) => {
+    if (this.checkUniqueData(name)) {
+      alert(`${name} is already in contacts.`);
       return false;
     }
 
@@ -28,7 +28,7 @@ export class App extends Component {
 
       const newContact = {
         id: nanoid(),
-        nameContact,
+        name,
         number,
       };
 
@@ -37,12 +37,12 @@ export class App extends Component {
     return true;
   };
 
-  checkUniqueData(nameContact) {
-    const normalizedName = nameContact.toLowerCase();
+  checkUniqueData(name) {
+    const normalizedName = name.toLowerCase();
     const { contacts } = this.state;
 
-    const result = contacts.find(({ nameContact, number }) => {
-      return nameContact.toLocaleLowerCase() === normalizedName;
+    const result = contacts.find(({ name }) => {
+      return name.toLocaleLowerCase() === normalizedName;
     });
 
     return Boolean(result);
@@ -66,8 +66,8 @@ export class App extends Component {
     }
 
     const normmalizedFilter = filter.toLocaleLowerCase();
-    const result = contacts.filter(({ nameContact, number }) => {
-      return nameContact.toLocaleLowerCase().includes(normmalizedFilter);
+    const result = contacts.filter(({ name }) => {
+      return name.toLocaleLowerCase().includes(normmalizedFilter);
     });
 
     return result;

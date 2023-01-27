@@ -7,7 +7,7 @@ import styles from './ContactFofm.module.css';
 
 class ContactForm extends Component {
   state = {
-    nameContact: '',
+    name: '',
     number: '',
   };
 
@@ -23,7 +23,7 @@ class ContactForm extends Component {
 
   reset() {
     this.setState({
-      nameContact: '',
+      name: '',
       number: '',
     });
   }
@@ -37,16 +37,16 @@ class ContactForm extends Component {
   };
 
   render() {
-    const { nameContact, number } = this.state;
+    const { name, number } = this.state;
     const { handleSubmit, handleChange } = this;
     return (
       <form className={styles.сontactForm} onSubmit={handleSubmit}>
         <LabelInput
           caption="Name"
-          value={nameContact}
+          value={name}
           onChange={handleChange}
           type="text"
-          name="nameContact"
+          name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required="required"
