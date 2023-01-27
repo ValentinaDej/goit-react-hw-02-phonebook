@@ -10,6 +10,7 @@ const LabelInput = ({
   pattern,
   title,
   required,
+  value,
   onChange,
 }) => {
   const labelId = nanoid();
@@ -25,6 +26,7 @@ const LabelInput = ({
         title={title}
         required={required}
         onChange={onChange}
+        value={value}
       />
     </label>
   );

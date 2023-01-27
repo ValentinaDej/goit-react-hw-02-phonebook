@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LabelInput from 'shared/LabelInput/LabelInput';
 import styles from './Filter.module.css';
 
-export const Filter = ({ handleChange }) => {
+const Filter = ({ handleChange }) => {
   return (
     <div className={styles.ContactForm}>
       <LabelInput
